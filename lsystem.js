@@ -12,7 +12,8 @@ class Lsystem{
     
     this.axiom = axiom;
     this.sentence = this.axiom;
-    this.len=100;
+    this.lenMaster=100;
+    this.len=this.lenMaster;
     this.angle = radians(25);
      
     this.tree = [];
@@ -22,7 +23,7 @@ class Lsystem{
     this.axiom = axiom;
   }
   setLen(len){
-    this.len=len;
+    this.lenMaster=len;
   }
   setAngle(angle){
     this.angle=angle;
@@ -38,7 +39,7 @@ class Lsystem{
     if(this.sentence.length > 2048)
     {
       this.sentence = this.axiom;
-      this.len = 100;
+      this.len = this.lenMaster;
     }
     
     this.len*=0.5;

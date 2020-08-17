@@ -1,58 +1,71 @@
-let test;
-let count;
+let tree;
+let frameCount;
 let gui;
-let s;
+let thetaSlider;
+// let lenSlider;
+// let radio;
+let rules = [['F','F','-','[','-','F','+','F','+','F',']','+','[','+','F','-','F','-','F',']'],['F','[','+','F',']','F','[','-','F',']','F'],['F','[','+','F',']','F','[','-','F',']','[','F',']'],['F','F','[','+','F',']','F','F','[','-','F',']','+','F'],['F','F','[','+','F',']','[','-','F',']','F','F','F'],['F','F','-','[','[','F',']','+','F',']','+','F','F','[','+','F','F','F',']','-','F']];
+
 let button;
 let list;
 let rule = '';
 
 function setup() {
   createCanvas(400, 400);
-  gui = createGui();
-  s = createSliderV("Slider", 30, 50, 32, 300, 0, TWO_PI);
-  test = new Lsystem();
-  count = 0;
-    
-  // input = createInput('FF+[+F-F-F]-[-F+F+F]');
-  // input.position(20, 420);
 
- // button = createButton('submit', 20, 20);
-  // button.position(input.x + input.width, 420);
-  // button.mousePressed(()=>test.setRules(input.value()));
- 
+  gui = createGui();
+
+  thetaSlider = createSliderV("theta", 30, 50, 32, 300, 0, TWO_PI);
+  thetaSlider.val=radians(25);
+
+  // radio = createRadio();
+  // radio.option('A',0);
+  // radio.option('B',1);
+  // radio.option('C',2);
+  // radio.option('D',3);
+  // radio.option('E',4);
+  // radio.option('F',5);
+
+  // radio.selected('A');
+  // lenSlider = createSliderV("len", 82, 50, 32, 300, 0, 500)
+  // lenSlider.val=100;
+  tree = new Lsystem();
+  frameCount = 0;
+     
 }
 
 function draw() {
   background(220);
   drawGui();
-  // if(button.isPressed){
-  // test.setRules(input.value());
-  // }
-  // rule.concat(list.child().forEach(element => {
-  //     element.html;
-  // }));
-    // test.setRules(rule)
-    list = selectAll('li');
-   rule='';
-   list.forEach(el=>rule+=el.html());
-   test.setRules(rule);
-  
-  if(s.isChanged) {
-    // Print a message when Slider is changed
-    // that displays its value.
-    test.setAngle(s.val);
-  }
 
-  count++;
-  if(count%7===0){
-  test.generate();
+  // radio.addEventListener("change", console.log(radio.selected()));
+    // if(radio.selected() == 'A'){
+    //   console.log('dicks');
+    // }
   
-   }
-   test.turtle();
-   //console.log(list);
+
+  list = selectAll('li');
+  rule='';
+  list.forEach(el=>rule+=el.html());
+  tree.setRules(rule);
+  
+  if(thetaSlider.isChanged) {
+    tree.setAngle(thetaSlider.val);
+  }
+  // if(lenSlider.isChanged){
+  //   tree.setLen(lenSlider.val);
+  // }
+
+  frameCount++;
+  if(frameCount%7===0){
+     tree.generate();
+  }
+ 
+   
+  tree.turtle();
 }
 
-function mousePressed(){
-
-  test.generate();
+function touchMoved() {
+  // do some stuff
+  return false;
 }
