@@ -1,25 +1,27 @@
 {
-    "name": "savvy-starter",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "serve": "browser-sync start --server --files '*.html, *.css, *.js'"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "browser-sync": "^2.26.7",
-      "eslint": "^6.6.0",
-      "eslint-config-prettier": "^6.5.0",
-      "eslint-plugin-prettier": "^3.1.1",
-      "prettier": "1.19.1",
-      "stylelint": "^11.1.1",
-      "stylelint-config-prettier": "^6.0.0",
-      "stylelint-config-recommended": "^3.0.0",
-      "stylelint-prettier": "^1.1.1",
-      "stylelint-vscode": "^7.0.0-6"
-    }
+  "name": "savvy-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "browser-sync start --server --files '*.html, *.css, *.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "1.19.1",
+    "stylelint": "^11.1.1",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-prettier": "^1.1.1",
+    "stylelint-vscode": "^7.0.0-6"
+  },
+  "dependencies": {
+    "touch-dnd": "^1.2.1"
   }
-  
+}

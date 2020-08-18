@@ -4,11 +4,74 @@ let gui;
 let thetaSlider;
 // let lenSlider;
 // let radio;
-let rules = [['F','F','-','[','-','F','+','F','+','F',']','+','[','+','F','-','F','-','F',']'],['F','[','+','F',']','F','[','-','F',']','F'],['F','[','+','F',']','F','[','-','F',']','[','F',']'],['F','F','[','+','F',']','F','F','[','-','F',']','+','F'],['F','F','[','+','F',']','[','-','F',']','F','F','F'],['F','F','-','[','[','F',']','+','F',']','+','F','F','[','+','F','F','F',']','-','F']];
-
+let rules = [['F','F','-','[','-','F','+','F','+','F',']','+','[','+','F','-','F','-','F',']'],['F','[','+','F',']','F','[','-','F',']','[','F',']'],['F','[','+','F',']','F','[','-','F',']','F'],['F','[','F','+','F','+','F',']','F','[','F','-','F','-','F',']'],['F','F','[','+','F',']','[','-','F',']','F','F','[','-','F','+','F','+','F',']'],['F','-','F','+','F','-','F','-','F']];
+let selected_value;
 let button;
 let list;
 let rule = '';
+let ul;
+
+$(document).ready(function(){
+
+  ul = document.getElementById('sortable');
+
+  $('#treeRadio').change(function(){
+      selected_value = $("input[name='tree']:checked").val();
+      while(ul.hasChildNodes()){
+        ul.removeChild(ul.firstChild)
+      }
+      switch(selected_value){
+        case '0':
+          for(let i of rules[0]){
+            let node = document.createElement("li");                 // Create a <li> node
+            let textnode = document.createTextNode(`${i}`);         // Create a text node
+            node.appendChild(textnode); 
+            ul.appendChild(node);
+          }
+          break;
+        case '1':
+          for(let i of rules[1]){
+            let node = document.createElement("li");                 // Create a <li> node
+            let textnode = document.createTextNode(`${i}`);         // Create a text node
+            node.appendChild(textnode); 
+            ul.appendChild(node);
+          }
+          break;
+        case '2':
+          for(let i of rules[2]){
+            let node = document.createElement("li");                 // Create a <li> node
+            let textnode = document.createTextNode(`${i}`);         // Create a text node
+            node.appendChild(textnode); 
+            ul.appendChild(node);
+          }
+          break;
+        case '3':
+          for(let i of rules[3]){
+            let node = document.createElement("li");                 // Create a <li> node
+            let textnode = document.createTextNode(`${i}`);         // Create a text node
+            node.appendChild(textnode); 
+            ul.appendChild(node);
+          }
+          break;
+        case '4':
+          for(let i of rules[4]){
+            let node = document.createElement("li");                
+            let textnode = document.createTextNode(`${i}`);         
+            node.appendChild(textnode); 
+            ul.appendChild(node);
+          }
+          break;
+        case '5':
+          for(let i of rules[5]){
+            let node = document.createElement("li");                 
+            let textnode = document.createTextNode(`${i}`);        
+            node.appendChild(textnode); 
+            ul.appendChild(node);
+          }
+          break;
+      }
+  });
+});
 
 function setup() {
   createCanvas(400, 400);
@@ -42,6 +105,7 @@ function draw() {
     // if(radio.selected() == 'A'){
     //   console.log('dicks');
     // }
+  
   
 
   list = selectAll('li');
