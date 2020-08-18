@@ -1,62 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
-    <script src="https://unpkg.com/p5.touchgui@0.5.2/lib/p5.touchgui.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+  <script src="https://unpkg.com/p5.touchgui@0.5.2/lib/p5.touchgui.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <style>
-  html {background: #c7c7c7}
-  #sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
-  #sortable li {border-radius: 50px; background: #c7c7c7; box-shadow:  20px 20px 60px #a9a9a9, 
-             -20px -20px 60px #e5e5e5; margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+    html {
+      background: #c7c7c7
+    }
+
+    #sortable {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 450px;
+    }
+
+    #sortable li {
+      border-radius: 50px;
+      background: #c7c7c7;
+      box-shadow: 20px 20px 60px #a9a9a9,
+        -20px -20px 60px #e5e5e5;
+      margin: 3px 3px 3px 0;
+      padding: 1px;
+      float: left;
+      width: 100px;
+      height: 90px;
+      font-size: 4em;
+      text-align: center;
+    }
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  } );
+    $(function () {
+      $("#sortable").sortable();
+      $("#sortable").disableSelection();
+    });
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300&display=swap" rel="stylesheet">
-  </head>
+</head>
+<div class="container">
+
   <body style="font-family: 'Red Rose', cursive; padding: 5px;">
     <div style="display:inline">
-    <h1>treequencer</h1>
-  </div>
-    <div id = "treeRadio">
+      <h1>treequencer</h1>
+    </div>
+    <div id="treeRadio">
       <p style="padding: 5px; font-size:larger">Production String:</p>
-      <input type="radio" id="fir"
-       name="tree" value="0" checked>
+      <input type="radio" id="fir" name="tree" value="0" checked>
       <label for="first">one</label>
-  
-      <input type="radio" id="sec"
-       name="tree" value="1">
+
+      <input type="radio" id="sec" name="tree" value="1">
       <label for="second">two</label>
-  
-      <input type="radio" id="thi"
-       name="tree" value="2">
+
+      <input type="radio" id="thi" name="tree" value="2">
       <label for="third">three</label>
 
-      <input type="radio" id="fou"
-       name="tree" value="3">
+      <input type="radio" id="fou" name="tree" value="3">
       <label for="fourth">four</label>
-  
-      <input type="radio" id="fif"
-       name="tree" value="4">
+
+      <input type="radio" id="fif" name="tree" value="4">
       <label for="fifth">five</label>
-  
-      <input type="radio" id="six"
-       name="tree" value="5">
+
+      <input type="radio" id="six" name="tree" value="5">
       <label for="sixth">six</label>
     </div>
 
+
     <script src="sketch.js"></script>
     <script src="lsystem.js"></script>
+
     <ul id="sortable">
       <li class="ui-state-default">F</li>
       <li class="ui-state-default">F</li>
@@ -81,4 +100,6 @@
 
     </ul>
   </body>
+</div>
+
 </html>
