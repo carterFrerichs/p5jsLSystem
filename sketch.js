@@ -1,3 +1,6 @@
+let gifLength = 180;
+let canvas;
+
 let tree;
 let frameCount;
 let gui;
@@ -74,7 +77,10 @@ $(document).ready(function () {
 });
 
 function setup() {
-  createCanvas(400, 400);
+  let p5Canvas = createCanvas(400, 400);
+  canvas = p5Canvas.canvas;
+  capturer.start();
+ 
 
   gui = createGui();
 
@@ -101,12 +107,14 @@ function draw() {
   background(220);
   drawGui();
 
-  // radio.addEventListener("change", console.log(radio.selected()));
-  // if(radio.selected() == 'A'){
-  //   console.log('dicks');
-  // }
 
-
+  if(frameCount < gifLength){
+    capturer.capture(canvas);
+  }
+  else if(frameCount===gifLength){
+    capturer.stop();
+    capturer.save();
+  }
 
   list = selectAll('li');
   rule = '';

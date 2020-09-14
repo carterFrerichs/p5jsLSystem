@@ -6,6 +6,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
   <script src="https://unpkg.com/p5.touchgui@0.5.2/lib/p5.touchgui.js"></script>
+  <script src="CCapture.all.min.js"></script>
+  <script src="./js/gif.worker.js"></script>
+  <script>
+    var capturer = new CCapture( {
+      framerate: 60,
+      format: 'gif',
+      workersPath: './js/',
+      verbose: true
+    } );
+  </script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -47,8 +57,10 @@
 </head>
 <div class="container">
 
-  <body style="font-family: 'Red Rose', cursive; padding: 5px;">
-    <div style="display:inline">
+  <body style="font-family: 'Red Rose', cursive; padding: 5px; display:flexbox;">
+    <div style="align-content: center;">
+    <div id="class1">
+    <div >
       <h1>treequencer</h1>
     </div>
     <div id="treeRadio">
@@ -73,8 +85,6 @@
     </div>
 
 
-    <script src="sketch.js"></script>
-    <script src="lsystem.js"></script>
 
     <ul id="sortable">
       <li class="ui-state-default">F</li>
@@ -99,6 +109,13 @@
       <li class="ui-state-default">]</li>
 
     </ul>
+  </div>
+    <div id="class2">
+
+    <script src="sketch.js"></script>
+    <script src="lsystem.js"></script>
+  </div>
+</div>
   </body>
 </div>
 

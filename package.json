@@ -22,6 +22,8 @@
     "stylelint-vscode": "^7.0.0-6"
   },
   "dependencies": {
+    "ccapture.js": "^1.1.0",
+    "gif-capture-canvas": "^1.0.1",
     "touch-dnd": "^1.2.1"
   }
 }
